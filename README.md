@@ -12,7 +12,7 @@ CST 495 Final Project -
 ### Description
 
 ### App Evaluation
-- **Category:* News* 
+- **Category:** News 
 - **Mobile:** 
 - **Story:** 
 - **Market:** 
