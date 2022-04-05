@@ -22,6 +22,7 @@ CST 495 Final Project -
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
+
 **Required Must-have Stories**
 
 * 
@@ -44,6 +45,8 @@ CST 495 Final Project -
 * 
 
 ## Wireframes
+![K   J News Feed_Search_Search Results (1)](https://user-images.githubusercontent.com/8891981/161655157-44d991c2-26ce-4d51-a128-7e9c3f83de90.png)
+![K   J News User_Favorites_Misc](https://user-images.githubusercontent.com/8891981/161655180-0b6f2796-7594-4fdd-a1ec-c9a9027c0e12.png)
 ## Schema 
 ### Models
 #### Post
