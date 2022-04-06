@@ -13,11 +13,11 @@ CST 495 Final Project -
 
 ### App Evaluation
 - **Category:** News 
-- **Mobile:** 
-- **Story:** 
-- **Market:** 
-- **Habit:** 
-- **Scope:** 
+- **Mobile:** This app would primarily be developed for mobile, and it can easily be used on a mobile web platform such as Safari.
+- **Story:** Users can have a curated news feed of trending articles and change accordingly based on their preferences
+- **Market:** Any individual that wants to be in the know about current trending news events 
+- **Habit:** This app could be used as often or unoften as the user wanted depending on how much they would like to browse news 
+- **Scope:** First we would start with account registration and getting the general news feed.  From there, we will add the catagory filtering and searching functionality. Lastly, we would impolement the selection of language and country.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
@@ -25,24 +25,42 @@ CST 495 Final Project -
 
 **Required Must-have Stories**
 
+* User can register and login
+* User can filter news catagories from pre-offered selection
+* User can search for a news article with custom search terms
+* User can save/favorite an article
 * 
 
 **Optional Nice-to-have Stories**
 
-* 
+* User can select a language and country for translated news and different sources from different countries
 
 ### 2. Screen Archetypes
 
-* 
+* Login 
+* Register - User signs up or logs into their account: User is prompted to login after force closing the app
+* Profile Screen - User can select language/country preferences
+* Main Feed - Allows the user to have a trending selection of news offerings
+* Saved - Users can view saved articles
+* Filtered Feed - User can selected predefined topics to filter news offerings
+* Search - User can do a custom search for news articles
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* 
+* Login
+* Profile
+* Main Feed
+* Search/Filtered Feed
+* Saved
 
 **Flow Navigation** (Screen to Screen)
-* 
+*  Register -> Login
+*  Login -> Home Feed
+*  Home Feed -> Saved
+*  Home Feed -> Settings
+
 
 ## Wireframes
 ![K   J News Feed_Search_Search Results (1)](https://user-images.githubusercontent.com/8891981/161655157-44d991c2-26ce-4d51-a128-7e9c3f83de90.png)
