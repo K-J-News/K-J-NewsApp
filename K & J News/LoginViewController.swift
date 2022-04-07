@@ -17,8 +17,19 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onSignIn(_ sender: Any) {
+    @IBAction func onLogin(_ sender: Any) {
+        let username = usernameField.text!
+        let password = passwordField.text!
         
+        PFUser.logInWithUsername(inBackground:username, password:password) {
+          (user,error) -> Void in
+          if user != nil {
+              self.performSegue(withIdentifier: "loginToFeedSegue", sender: nil)
+          } else {
+            // The login failed. Check error to see why.
+              print("Error: \(String(describing: error?.localizedDescription))")
+          }
+        }
     }
     
     @IBAction func onSignUp(_ sender: Any) {

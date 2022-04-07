@@ -74,7 +74,7 @@
                                     <fontDescription key="titleFontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6V-01-VWs"/>
+                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEm-AM-pOO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,7 +192,7 @@
                     <connections>
                         <outlet property="passwordField" destination="FH9-Z3-tHY" id="4ge-fg-jD1"/>
                         <outlet property="usernameField" destination="RWL-hI-Lie" id="XYg-Ap-ATK"/>
-                        <segue destination="T1Q-Ub-HCy" kind="presentation" identifier="SignUpToFeedSegue" id="2P0-ei-xYn"/>
+                        <segue destination="T1Q-Ub-HCy" kind="presentation" identifier="signUpToFeedSegue" id="2P0-ei-xYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMk-VQ-Hv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,7 +204,7 @@
             <objects>
                 <viewController id="0kI-Hc-wqi" customClass="FeedViewController" customModule="K___J_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMe-Mk-h76">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Nxf-BB-IS5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -218,10 +218,10 @@
         <!--Navigation Controller-->
         <scene sceneID="Pax-Sw-uBy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T1Q-Ub-HCy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="T1Q-Ub-HCy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n3x-2k-FFt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -235,7 +235,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2P0-ei-xYn"/>
+        <segue reference="LFh-hw-L9h"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
