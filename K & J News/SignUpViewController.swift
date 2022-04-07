@@ -19,9 +19,15 @@ class SignUpViewController: UIViewController {
     
 
     @IBAction func onSignUp(_ sender: Any) {
+        
+        // create parse user object
         let user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
+        
+        // custom attributes for our users
+        user["lang"] = "en"
+        user["country"] = "us"
 
           user.signUpInBackground {
               (success, error) -> Void in

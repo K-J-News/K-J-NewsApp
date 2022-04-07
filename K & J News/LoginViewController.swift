@@ -9,6 +9,7 @@ import UIKit
 import Parse
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
@@ -27,7 +28,9 @@ class LoginViewController: UIViewController {
               self.performSegue(withIdentifier: "loginToFeedSegue", sender: nil)
           } else {
             // The login failed. Check error to see why.
-              print("Error: \(String(describing: error?.localizedDescription))")
+              print("Error: \(String(describing: error!.localizedDescription))")
+              self.errorMessageLabel.isHidden = false
+              self.errorMessageLabel.text = String(describing: error!.localizedDescription)
           }
         }
     }
