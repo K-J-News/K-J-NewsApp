@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4AE6FC20B5CD679D5F960A /* Pods_K___J_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */; };
 		D0721E6927FE5DB70018D854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0721E6827FE5DB70018D854 /* AppDelegate.swift */; };
 		D0721E6B27FE5DB70018D854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0721E6A27FE5DB70018D854 /* SceneDelegate.swift */; };
 		D0721E6D27FE5DB70018D854 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0721E6C27FE5DB70018D854 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_K___J_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.release.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.release.xcconfig"; sourceTree = "<group>"; };
 		D0721E6527FE5DB70018D854 /* K & J News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "K & J News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0721E6827FE5DB70018D854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0721E6A27FE5DB70018D854 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		D0721E7127FE5DB80018D854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0721E7427FE5DB80018D854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0721E7627FE5DB80018D854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.debug.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4AE6FC20B5CD679D5F960A /* Pods_K___J_News.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45A9B57AC31CA7CB13CE73F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */,
+				989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A8D905361D2E6EBDAE00E3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0721E5C27FE5DB60018D854 = {
 			isa = PBXGroup;
 			children = (
 				D0721E6727FE5DB70018D854 /* K & J News */,
 				D0721E6627FE5DB70018D854 /* Products */,
+				45A9B57AC31CA7CB13CE73F8 /* Pods */,
+				7A8D905361D2E6EBDAE00E3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0721E7927FE5DB80018D854 /* Build configuration list for PBXNativeTarget "K & J News" */;
 			buildPhases = (
+				B2449E78B28FB02C718749F7 /* [CP] Check Pods Manifest.lock */,
 				D0721E6127FE5DB60018D854 /* Sources */,
 				D0721E6227FE5DB60018D854 /* Frameworks */,
 				D0721E6327FE5DB60018D854 /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2449E78B28FB02C718749F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-K & J News-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0721E6127FE5DB60018D854 /* Sources */ = {
@@ -284,6 +335,7 @@
 		};
 		D0721E7A27FE5DB80018D854 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +364,7 @@
 		};
 		D0721E7B27FE5DB80018D854 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
