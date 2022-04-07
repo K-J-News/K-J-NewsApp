@@ -14,10 +14,11 @@
 		D0721E7027FE5DB70018D854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0721E6E27FE5DB70018D854 /* Main.storyboard */; };
 		D0721E7227FE5DB80018D854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0721E7127FE5DB80018D854 /* Assets.xcassets */; };
 		D0721E7527FE5DB80018D854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0721E7327FE5DB80018D854 /* LaunchScreen.storyboard */; };
+		D0A1BE5D27FE92CE004FA0BE /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0A1BE5C27FE92CE004FA0BE /* keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_K___J_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_K___J_News.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.release.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.release.xcconfig"; sourceTree = "<group>"; };
 		D0721E6527FE5DB70018D854 /* K & J News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "K & J News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0721E6827FE5DB70018D854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +28,7 @@
 		D0721E7127FE5DB80018D854 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0721E7427FE5DB80018D854 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0721E7627FE5DB80018D854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A1BE5C27FE92CE004FA0BE /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.debug.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +50,6 @@
 				E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */,
 				989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				D0721E6827FE5DB70018D854 /* AppDelegate.swift */,
+				D0A1BE5C27FE92CE004FA0BE /* keys.plist */,
 				D0721E6A27FE5DB70018D854 /* SceneDelegate.swift */,
 				D0721E6C27FE5DB70018D854 /* ViewController.swift */,
 				D0721E6E27FE5DB70018D854 /* Main.storyboard */,
@@ -152,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A1BE5D27FE92CE004FA0BE /* keys.plist in Resources */,
 				D0721E7527FE5DB80018D854 /* LaunchScreen.storyboard in Resources */,
 				D0721E7227FE5DB80018D854 /* Assets.xcassets in Resources */,
 				D0721E7027FE5DB70018D854 /* Main.storyboard in Resources */,
