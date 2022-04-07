@@ -7,10 +7,13 @@
 
 import UIKit
 import Parse
+
+
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var errorMessageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,9 +35,13 @@ class SignUpViewController: UIViewController {
           user.signUpInBackground {
               (success, error) -> Void in
                 if success{
+                    self.errorMessageLabel.isHidden = true
                     self.performSegue(withIdentifier: "signUpToFeedSegue", sender: nil)
                 } else {
                     print("Error: \(String(describing: error?.localizedDescription))")
+                    self.errorMessageLabel.isHidden = false
+                    self.errorMessageLabel.text = String(describing: error!.localizedDescription)
+                    self.errorMessageLabel.shake()
                 }
           }
     }
