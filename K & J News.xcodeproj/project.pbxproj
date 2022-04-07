@@ -103,6 +103,7 @@
 				D0721E6127FE5DB60018D854 /* Sources */,
 				D0721E6227FE5DB60018D854 /* Frameworks */,
 				D0721E6327FE5DB60018D854 /* Resources */,
+				9F19AAE074F777F40DACC0DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +161,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9F19AAE074F777F40DACC0DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-K & J News/Pods-K & J News-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-K & J News/Pods-K & J News-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-K & J News/Pods-K & J News-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2449E78B28FB02C718749F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
