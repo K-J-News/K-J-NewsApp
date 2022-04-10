@@ -30,6 +30,14 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
+            print("already logged in")
+            self.performSegue(withIdentifier: "loginToFeedSegue", sender: nil)
+        }
+    }
+    
+    
     @IBAction func onLogin(_ sender: Any) {
         let username = usernameField.text!
         let password = passwordField.text!
@@ -38,6 +46,7 @@ class LoginViewController: UIViewController {
           (user,error) -> Void in
           if user != nil {
               self.errorMessageLabel.isHidden = true
+              UserDefaults.standard.set(true, forKey: "userLoggedIn")
               self.performSegue(withIdentifier: "loginToFeedSegue", sender: nil)
           } else {
             // The login failed. Check error to see why.
