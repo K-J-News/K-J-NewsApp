@@ -91,3 +91,6 @@ CST 495 Final Project -
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update user language
       - (Update/PUT) Update user country
+
+### Credits
+<a href="https://www.flaticon.com/free-icons/news" title="news icons">News icons created by dickpra - Flaticon</a>
