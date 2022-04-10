@@ -17,6 +17,8 @@
 		D0A1BE5F27FF3C4F004FA0BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1BE5E27FF3C4F004FA0BE /* LoginViewController.swift */; };
 		D0A1BE6127FF3C5C004FA0BE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1BE6027FF3C5C004FA0BE /* FeedViewController.swift */; };
 		D0A1BE6327FF4490004FA0BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1BE6227FF4490004FA0BE /* SignUpViewController.swift */; };
+		D0A1BE65280268F9004FA0BE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1BE64280268F9004FA0BE /* SearchViewController.swift */; };
+		D0A1BE672802696F004FA0BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1BE662802696F004FA0BE /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		D0A1BE5E27FF3C4F004FA0BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D0A1BE6027FF3C5C004FA0BE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D0A1BE6227FF4490004FA0BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D0A1BE64280268F9004FA0BE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D0A1BE662802696F004FA0BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E0D4D46896B1FBF608A863F2 /* Pods-K & J News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.debug.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 				D0A1BE5E27FF3C4F004FA0BE /* LoginViewController.swift */,
 				D0A1BE6027FF3C5C004FA0BE /* FeedViewController.swift */,
 				D0A1BE6227FF4490004FA0BE /* SignUpViewController.swift */,
+				D0A1BE64280268F9004FA0BE /* SearchViewController.swift */,
+				D0A1BE662802696F004FA0BE /* ProfileViewController.swift */,
 			);
 			path = "K & J News";
 			sourceTree = "<group>";
@@ -216,9 +222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A1BE65280268F9004FA0BE /* SearchViewController.swift in Sources */,
 				D0A1BE5F27FF3C4F004FA0BE /* LoginViewController.swift in Sources */,
 				D0721E6927FE5DB70018D854 /* AppDelegate.swift in Sources */,
 				D0A1BE6127FF3C5C004FA0BE /* FeedViewController.swift in Sources */,
+				D0A1BE672802696F004FA0BE /* ProfileViewController.swift in Sources */,
 				D0721E6B27FE5DB70018D854 /* SceneDelegate.swift in Sources */,
 				D0A1BE6327FF4490004FA0BE /* SignUpViewController.swift in Sources */,
 			);

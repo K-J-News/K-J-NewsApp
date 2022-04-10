@@ -84,6 +84,10 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="world-news" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-ho-RGt">
+                                <rect key="frame" x="97" y="63" width="220" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,13 +120,13 @@
                         <outlet property="errorMessageLabel" destination="D8h-rq-PmQ" id="qzr-Lv-poo"/>
                         <outlet property="passwordField" destination="1iu-he-Y03" id="SX1-IF-CJw"/>
                         <outlet property="usernameField" destination="FLD-aA-GMa" id="Fcw-ea-wg7"/>
-                        <segue destination="T1Q-Ub-HCy" kind="presentation" identifier="loginToFeedSegue" id="LFh-hw-L9h"/>
                         <segue destination="3Qe-bV-oZM" kind="presentation" identifier="loginToSignUpSegue" id="YXm-72-rZg"/>
+                        <segue destination="pV0-jM-LfG" kind="show" identifier="loginToFeedSegue" id="lQQ-ID-zn4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088.4057971014493" y="95.758928571428569"/>
+            <point key="canvasLocation" x="-1386" y="-708"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="sii-9x-kRG">
@@ -164,13 +168,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzh-fD-aRN">
-                                <rect key="frame" x="50" y="509" width="314" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KId-J9-WXg">
                                 <rect key="frame" x="149" y="556" width="117" height="50"/>
                                 <constraints>
@@ -184,6 +181,17 @@
                                     <action selector="onSignUp:" destination="3Qe-bV-oZM" eventType="touchUpInside" id="QAn-li-z35"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzh-fD-aRN">
+                                <rect key="frame" x="50" y="509" width="314" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="world-news" translatesAutoresizingMaskIntoConstraints="NO" id="tHi-KZ-pzd">
+                                <rect key="frame" x="97" y="63" width="220" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fj7-2q-VbK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -208,19 +216,19 @@
                         <outlet property="errorMessageLabel" destination="Nzh-fD-aRN" id="eSX-KX-WOG"/>
                         <outlet property="passwordField" destination="FH9-Z3-tHY" id="4ge-fg-jD1"/>
                         <outlet property="usernameField" destination="RWL-hI-Lie" id="XYg-Ap-ATK"/>
-                        <segue destination="T1Q-Ub-HCy" kind="presentation" identifier="signUpToFeedSegue" id="2P0-ei-xYn"/>
+                        <segue destination="pV0-jM-LfG" kind="show" identifier="signUpToFeedSegue" id="t71-re-E7M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMk-VQ-Hv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112" y="-452"/>
+            <point key="canvasLocation" x="-348" y="-392"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="gr4-VC-Onh">
             <objects>
                 <viewController id="0kI-Hc-wqi" customClass="FeedViewController" customModule="K___J_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMe-Mk-h76">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Nxf-BB-IS5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,15 +237,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lae-7d-Yqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.0000000000002" y="79.6875"/>
+            <point key="canvasLocation" x="-2668" y="1981"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search View Controller-->
+        <scene sceneID="lhr-TL-9Ya">
+            <objects>
+                <viewController id="VcD-AE-WD6" customClass="SearchViewController" customModule="K___J_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vut-f5-vU1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="A8l-E1-EpF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3V1-Xn-xVj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Khh-gq-jUH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1387" y="1981"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="4Of-P0-SLM">
+            <objects>
+                <viewController id="1TI-1s-3Rq" customClass="ProfileViewController" customModule="K___J_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Shm-Dt-keR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zIz-Am-XKe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="292-zD-78a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yEf-Ul-eMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110" y="1981"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KeP-U2-MNH">
+            <objects>
+                <tabBarController id="pV0-jM-LfG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FP1-3v-0h6"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gE7-KG-Azb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="T1Q-Ub-HCy" kind="relationship" relationship="viewControllers" id="IL0-DA-ViU"/>
+                        <segue destination="BTI-zX-Hma" kind="relationship" relationship="viewControllers" id="WyJ-bQ-Bqx"/>
+                        <segue destination="Zvp-fu-4uY" kind="relationship" relationship="viewControllers" id="sQ6-Ml-cce"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGm-GO-BDs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1387" y="427"/>
+        </scene>
+        <!--Feed-->
         <scene sceneID="Pax-Sw-uBy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="T1Q-Ub-HCy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" image="feedTab" id="ary-qX-KB1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n3x-2k-FFt">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -247,13 +308,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuS-Wl-Z6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889.85507246376824" y="79.6875"/>
+            <point key="canvasLocation" x="-2668" y="1124"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="efd-jx-0Pp">
+            <objects>
+                <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="BTI-zX-Hma" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="searchTab" id="sMl-V6-xTB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C8r-Xq-XPP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VcD-AE-WD6" kind="relationship" relationship="rootViewController" id="RXv-2q-wDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bJ-vI-Pjr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1387" y="1124"/>
+        </scene>
+        <!--Your Profile-->
+        <scene sceneID="RDX-CX-5ik">
+            <objects>
+                <navigationController title="Your Profile" automaticallyAdjustsScrollViewInsets="NO" id="Zvp-fu-4uY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="userTab" id="3hc-ay-hD9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JT1-be-rxk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1TI-1s-3Rq" kind="relationship" relationship="rootViewController" id="ztB-ij-2XP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQE-kB-ETW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="1124"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2P0-ei-xYn"/>
+        <segue reference="t71-re-E7M"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="feedTab" width="25" height="25"/>
+        <image name="searchTab" width="25" height="25"/>
+        <image name="userTab" width="25" height="25"/>
+        <image name="world-news" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
