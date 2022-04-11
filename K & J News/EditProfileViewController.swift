@@ -1,14 +1,14 @@
 //
-//  ProfileViewController.swift
+//  EditProfileViewController.swift
 //  K & J News
 //
-//  Created by Justin Le on 4/9/22.
+//  Created by Justin Le on 4/11/22.
 //
 
 import UIKit
-import Parse
 
-class ProfileViewController: UIViewController {
+
+class EditProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,17 +16,7 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var usernameOutlet: UILabel!
-    @IBAction func onEditProfile(_ sender: Any) {
-        self.performSegue(withIdentifier: "profileToEditSegue", sender: nil)
-    }
-    
-    @IBAction func onLogOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "userLoggedIn")
-        PFUser.logOut()
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 
