@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D4AE6FC20B5CD679D5F960A /* Pods_K___J_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */; };
+		9E723D9E2803D7BA0002C606 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E723D9D2803D7BA0002C606 /* APICaller.swift */; };
 		D0721E6927FE5DB70018D854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0721E6827FE5DB70018D854 /* AppDelegate.swift */; };
 		D0721E6B27FE5DB70018D854 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0721E6A27FE5DB70018D854 /* SceneDelegate.swift */; };
 		D0721E7027FE5DB70018D854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0721E6E27FE5DB70018D854 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		5DFF5E1E4DDB3B1D8F97A2C3 /* Pods_K___J_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_K___J_News.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		989AFFEC2F2A65152757EE51 /* Pods-K & J News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-K & J News.release.xcconfig"; path = "Target Support Files/Pods-K & J News/Pods-K & J News.release.xcconfig"; sourceTree = "<group>"; };
+		9E723D9D2803D7BA0002C606 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		D0721E6527FE5DB70018D854 /* K & J News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "K & J News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0721E6827FE5DB70018D854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0721E6A27FE5DB70018D854 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				D0A1BE6227FF4490004FA0BE /* SignUpViewController.swift */,
 				D0A1BE64280268F9004FA0BE /* SearchViewController.swift */,
 				D0A1BE662802696F004FA0BE /* ProfileViewController.swift */,
+				9E723D9D2803D7BA0002C606 /* APICaller.swift */,
 			);
 			path = "K & J News";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				D0A1BE672802696F004FA0BE /* ProfileViewController.swift in Sources */,
 				D0721E6B27FE5DB70018D854 /* SceneDelegate.swift in Sources */,
 				D0A1BE6327FF4490004FA0BE /* SignUpViewController.swift in Sources */,
+				9E723D9E2803D7BA0002C606 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
