@@ -424,6 +424,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="292-zD-78a"/>
                     <connections>
+                        <outlet property="countryOutlet" destination="Jg9-x2-eln" id="ayw-i5-fOE"/>
+                        <outlet property="langOutlet" destination="sHx-Sa-pzh" id="L6h-ht-KM0"/>
                         <outlet property="usernameOutlet" destination="hXZ-8a-q2M" id="XBB-tO-r5e"/>
                         <segue destination="b4F-Bg-4qX" kind="show" identifier="profileToEditSegue" id="kFi-ne-f1Y"/>
                     </connections>

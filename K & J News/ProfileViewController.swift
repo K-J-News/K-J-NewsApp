@@ -12,11 +12,16 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let user = PFUser.current()!
+        usernameOutlet.text = user.username
+        countryOutlet.text = user["country"]! as! String
+        langOutlet.text = user["lang"]! as! String
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var usernameOutlet: UILabel!
+    @IBOutlet weak var countryOutlet: UILabel!
+    @IBOutlet weak var langOutlet: UILabel!
     @IBAction func onEditProfile(_ sender: Any) {
         self.performSegue(withIdentifier: "profileToEditSegue", sender: nil)
     }
