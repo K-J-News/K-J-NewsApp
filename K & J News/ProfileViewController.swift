@@ -12,11 +12,15 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("view appear")
         let user = PFUser.current()!
         usernameOutlet.text = user.username
         countryOutlet.text = user["country"]! as! String
         langOutlet.text = user["lang"]! as! String
-        // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var usernameOutlet: UILabel!
