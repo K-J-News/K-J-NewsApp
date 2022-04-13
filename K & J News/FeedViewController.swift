@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 //TableView
 //CustomCell
@@ -21,6 +22,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return table
     }()
     
+    private var articles = [Article]()
     private var viewModels = [NewsTableViewCellViewModel]()
 
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         APICaller.shared.getTopStories { [weak self] result in
             switch result {
             case .success(let articles):
+                self?.articles = articles
                 self?.viewModels = articles.compactMap({
                     NewsTableViewCellViewModel(title: $0.title,
                                                subtitle: $0.description ?? "No description",
@@ -82,6 +85,18 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         tableView.deselectRow(at: indexPath, animated: true)
+        let article = articles[indexPath.row]
+        
+        guard let url = URL(string: article.url ?? "")else{
+            return
+        }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 150  
     }
 }
 
