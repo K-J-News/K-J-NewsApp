@@ -6,16 +6,47 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("view appear")
+        let user = PFUser.current()!
+        usernameOutlet.text = user.username
+        countryOutlet.text = user["country"]! as! String
+        langOutlet.text = user["lang"]! as! String
+    }
+    
+    @IBOutlet weak var usernameOutlet: UILabel!
+    @IBOutlet weak var countryOutlet: UILabel!
+    @IBOutlet weak var langOutlet: UILabel!
+    @IBAction func onEditProfile(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileToEditSegue", sender: nil)
+    }
+    
+    @IBAction func onLogOut(_ sender: Any) {
+        let alert = UIAlertController(title: "Log out?", message: "", preferredStyle: UIAlertController.Style.alert)
 
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            //Cancel Action
+        }))
+        alert.addAction(UIAlertAction(title: "Log out", style: UIAlertAction.Style.destructive,handler: {(_: UIAlertAction!) in
+            //Sign out action
+            UserDefaults.standard.set(false, forKey: "userLoggedIn")
+            PFUser.logOut()
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     /*
     // MARK: - Navigation
 
