@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
-            self.performSegue(withIdentifier: "loginToFeedSegue", sender: nil)
+            self.performSegue(withIdentifier: "autoLoginToFeedSegue", sender: nil)
         }
     }
     

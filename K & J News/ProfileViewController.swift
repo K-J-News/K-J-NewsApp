@@ -31,9 +31,20 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func onLogOut(_ sender: Any) {
-        UserDefaults.standard.set(false, forKey: "userLoggedIn")
-        PFUser.logOut()
-        self.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Log out?", message: "", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            //Cancel Action
+        }))
+        alert.addAction(UIAlertAction(title: "Log out", style: UIAlertAction.Style.destructive,handler: {(_: UIAlertAction!) in
+            //Sign out action
+            UserDefaults.standard.set(false, forKey: "userLoggedIn")
+            PFUser.logOut()
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     /*
