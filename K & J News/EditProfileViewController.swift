@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     
     
@@ -23,12 +23,56 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     
+    @IBOutlet weak var countryPickerView: UIPickerView!
+    
+    @IBOutlet weak var langPickerView: UIPickerView!
+    
+    var countryPickerDisplayData: [String] = [String]()
+    var countryPickerValueData: [String] = [String]()
+    var langPickerDisplayData: [String] = [String]()
+    var langPickerValueData: [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        
+        langPickerView.delegate = self
+        langPickerView.dataSource = self
+        
+        countryTextField.delegate = self
+        langTextField.delegate = self
+        
+        // langauges
+        //ar = arabic
+        //de = german
+        //en = english
+        //es = espanol
+        //fr = french
+        //he = hebrew
+        //it = italian
+        //nl = dutch
+        //no = norwegien
+        //pt = portuguse
+        //ru = russian
+        //se = swedish
+        //ud = urdu
+        //zh = chinese
+        
+        
+        countryPickerDisplayData = ["United Arab Emirates", "Argentina", "Austria", "Australia", "Belgium", "Bulgaria", "Brazil",  "Canada",  "Switzerland", "China", "Colombia", "Cuba", "Czech Republic", "Germany", "Egypt", "France", "United Kingdom", "Greece", "Hong Kong",  "Hungary", "Indonesia", "Ireland", "Israel", "India", "Italy", "Japan", "South Korea", "Lithuania", "Latvia", "Morocco", "Mexico", "Malaysia", "Nigeria", "Netherlands", "Norway", "New Zealand", "Philippines", "Portugal", "Romania", "Serbia", "Russia", "Saudi Arabia",  "Sweden", "Singapore", "Slovenia", "Slovakia", "Thailand", "Turkey", "Taiwan", "Ukraine", "United States", "Venezuela", "South Africa"]
+        countryPickerValueData = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it",  "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve",  "za",]
+        
+        langPickerDisplayData = [ "Arabic", "German", "English", "Spanish", "French", "Hebrew", "Italian", "Dutch", "Norwegien", "Portuguese", "Russian", "Swedish","Urdu" ,"Chinese"]
+        langPickerValueData = ["ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "se","ud" ,"zh"]
+        
+        
         let user = PFUser.current()!
         usernameTextField.text = user.username
         usernameTextField.placeholder = "Enter a new username"
-        
+
         countryTextField.text = user["country"] as! String
         countryTextField.placeholder = "Enter a new country (use two character code)"
         
@@ -36,7 +80,59 @@ class EditProfileViewController: UIViewController {
         
         langTextField.text = user["lang"] as! String
         countryTextField.placeholder = "Enter a new langauge (use two character code)"
+        
+        countryTextField.inputView = countryPickerView
+        langTextField.inputView = langPickerView
+        
+        countryPickerView.isHidden = true
+        langPickerView.isHidden = true
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == countryPickerView{
+                return countryPickerDisplayData.count
+            } else {
+                return langPickerDisplayData.count
+            }
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == countryPickerView{
+                return "\(countryPickerDisplayData[row])"
+            } else {
+                return "\(langPickerDisplayData[row])"
+            }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == countryPickerView{
+                countryTextField.text = countryPickerValueData[row]
+                countryPickerView.isHidden = true
+            } else {
+                langTextField.text = langPickerValueData[row]
+                langPickerView.isHidden = true
+            }
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool{
+        
+        if textField == countryTextField{
+            print("country is hidden false")
+            countryPickerView.isHidden = false
+            return true
+        }
+        else {
+            print("lang is hidden false")
+            langPickerView.isHidden = false
+            return true
+        }
     }
     
     @IBAction func saveChanges(_ sender: Any) {
