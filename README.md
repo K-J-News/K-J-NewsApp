@@ -98,4 +98,4 @@ CST 495 Final Project -
 
 ###**Gif of Update**
 
-
+http://g.recordit.co/JekgXUMNcl.gif
