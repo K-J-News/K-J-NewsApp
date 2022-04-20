@@ -27,7 +27,7 @@ CST 495 Final Project -
 
 * [x] User can register and login
 * [] User can filter news catagories from pre-offered selection
-* [] User can search for a news article with custom search terms
+* [x] User can search for a news article with custom search terms
 * [] User can save/favorite an article
 * [x] User can browse news articles and tap to view them in SafariView
 
