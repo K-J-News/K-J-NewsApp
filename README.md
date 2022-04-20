@@ -98,4 +98,4 @@ CST 495 Final Project -
 
 ###**Gif of Update**
 
-http://g.recordit.co/JekgXUMNcl.gif
+![image](https://user-images.githubusercontent.com/53494842/164131089-8a65ca2b-0c04-4ebe-96a0-7dbc77a0fc79.png)
