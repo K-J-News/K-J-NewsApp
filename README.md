@@ -30,6 +30,7 @@ CST 495 Final Project -
 * [x] User can search for a news article with custom search terms
 * [] User can save/favorite an article
 * [x] User can browse news articles and tap to view them in SafariView
+* [x] User can change language and country preferences
 
 **Optional Nice-to-have Stories**
 
@@ -94,3 +95,7 @@ CST 495 Final Project -
 
 ### Credits
 <a href="https://www.flaticon.com/free-icons/news" title="news icons">News icons created by dickpra - Flaticon</a>
+
+###**Gif of Update**
+
+
