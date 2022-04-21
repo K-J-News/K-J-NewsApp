@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Parse
 
 //TableView
 //CustomCell
@@ -32,24 +33,51 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
-        APICaller.shared.getTopStories { [weak self] result in
-            switch result {
-            case .success(let articles):
-                self?.articles = articles
-                self?.viewModels = articles.compactMap({
-                    NewsTableViewCellViewModel(title: $0.title,
-                                               subtitle: $0.description ?? "No description",
-                                               imageURL: URL(string: $0.urlToImage ?? ""))
-                })
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        let user = PFUser.current()!
+//        let userCountry = user["country"]! as! String
+//        let userLang = user["lang"]! as! String
+//        APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
+//            [weak self] result in
+//                    switch result {
+//                    case .success(let articles):
+//                        self?.articles = articles
+//                        self?.viewModels = articles.compactMap({
+//                            NewsTableViewCellViewModel(title: $0.title,
+//                                                       subtitle: $0.description ?? "No description",
+//                                                       imageURL: URL(string: $0.urlToImage ?? ""))
+//                        })
+//                        DispatchQueue.main.async {
+//                            self?.tableView.reloadData()
+//                        }
+//                    case .failure(let error):
+//                        print(error)
+//                    }
+//                }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let user = PFUser.current()!
+        let userCountry = user["country"]! as! String
+        let userLang = user["lang"]! as! String
+        APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
+            [weak self] result in
+                    switch result {
+                    case .success(let articles):
+                        self?.articles = articles
+                        self?.viewModels = articles.compactMap({
+                            NewsTableViewCellViewModel(title: $0.title,
+                                                       subtitle: $0.description ?? "No description",
+                                                       imageURL: URL(string: $0.urlToImage ?? ""))
+                        })
+                        DispatchQueue.main.async {
+                            self?.tableView.reloadData()
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
     }
     
     override func viewDidLayoutSubviews() {
