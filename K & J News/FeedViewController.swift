@@ -16,6 +16,8 @@ import SafariServices
 
 class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    
+    
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
@@ -98,5 +100,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 150  
     }
+    
+    
 }
 
