@@ -34,7 +34,7 @@ CST 495 Final Project -
 
 **Optional Nice-to-have Stories**
 
-* User can select a language and country for translated news and different sources from different countries
+* [x] User can select a language and country for translated news and different sources from different countries
 
 ### 2. Screen Archetypes
 
