@@ -50,7 +50,7 @@ final class APICaller{
             return
         }
         
-        let urlString = ("https://newsapi.org/v2/top-headlines?apiKey=cf4487e5702f48a1bbcd43901c508fcb&language=\(lang)&country\(country)")
+        let urlString = ("https://newsapi.org/v2/top-headlines?apiKey=cf4487e5702f48a1bbcd43901c508fcb&language=\(lang)&country=\(country)")
         guard let url = URL(string: urlString) else{
             return
         }
