@@ -7,6 +7,7 @@
 
 import UIKit
 import SafariServices
+import Parse
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -23,6 +24,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let user = PFUser.current()!
+        let userCountry = user["country"]! as! String
+        let userLang = user["lang"]! as! String
         
         view.addSubview(tableView)
         tableView.delegate = self
@@ -30,7 +34,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         createSearchBar()
         
-        APICaller.shared.getTopStories { [weak self] result in
+        APICaller.shared.getUserTopStories(lang: userLang, country: userCountry){ [weak self] result in
             switch result {
             case .success(let articles):
                 self?.articles = articles
@@ -108,7 +112,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let text = searchBar.text, !text.isEmpty else{
             return
         }
-        APICaller.shared.search(with: text){
+        let user = PFUser.current()!
+        let userCountry = user["country"]! as! String
+        let userLang = user["lang"]! as! String
+        APICaller.shared.getUserSearch(lang: userLang, country: userCountry, query: text) {
             [weak self] result in
                 switch result {
                 case .success(let articles):
@@ -124,6 +131,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }
                 case .failure(let error):
                     print(error)
+                    print("search term accepted/ran")
                 }
             }
         }
