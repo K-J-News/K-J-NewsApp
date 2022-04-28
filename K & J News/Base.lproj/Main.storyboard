@@ -235,6 +235,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Feed" id="Hf9-Rd-pKP"/>
+                    <connections>
+                        <outlet property="feedNavBar" destination="Hf9-Rd-pKP" id="uRV-pc-d0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lae-7d-Yqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

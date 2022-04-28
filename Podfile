@@ -8,4 +8,5 @@ target 'K & J News' do
   # Pods for K & J News
 	pod 'Parse'
  	pod 'AlamofireImage'
+	pod 'DropDown'
 end
