@@ -76,6 +76,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         
         let menuHandler: UIActionHandler = { action in
             print(action.title)
+            self.feedNavBar.title = action.title
             self.previousCategory = action.title
             APICaller.shared.getUserCatagoryStories(lang: userLang, country: userCountry, category: action.title) {
                 [weak self] result in
