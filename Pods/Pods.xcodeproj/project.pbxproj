@@ -675,7 +675,11 @@
 		48A6BE97FA2EB28579E3EA6A731D76DA /* PFPropertyInfo_Runtime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPropertyInfo_Runtime.h; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo_Runtime.h; sourceTree = "<group>"; };
 		48FA82AB4A6F35A08D09CC5491F49611 /* PFAnonymousUtils_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnonymousUtils_Private.h; path = Parse/Parse/Internal/User/AuthenticationProviders/Providers/Anonymous/PFAnonymousUtils_Private.h; sourceTree = "<group>"; };
 		4A13500D7820FD75A236D8EB8A24F93B /* PFRESTUserCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTUserCommand.h; path = Parse/Parse/Internal/Commands/PFRESTUserCommand.h; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		4AECC0001CF4560C54E942E53965CD9D /* Pods-K & J News */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-K & J News"; path = Pods_K___J_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		4AECC0001CF4560C54E942E53965CD9D /* Pods_K___J_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_K___J_News.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> Stashed changes
 		4B49C8AD8F57D0D09114EFCF54663712 /* PFConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFConfig.m; path = Parse/Parse/PFConfig.m; sourceTree = "<group>"; };
 		4B650DCA0F4B6DBA0480CFC8B9F5CB95 /* PFRelationState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRelationState.h; path = Parse/Parse/Internal/Relation/State/PFRelationState.h; sourceTree = "<group>"; };
 		4C40009B906E6C0EAF7537BB2C54EA77 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
@@ -788,7 +792,11 @@
 		83088AEDE5923718D6F55CCFC8A30DC5 /* PFCommandResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandResult.m; path = Parse/Parse/Internal/PFCommandResult.m; sourceTree = "<group>"; };
 		847CFC9F168EE3C9EE07ECEE02ADF381 /* PFInstallationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationController.m; path = Parse/Parse/Internal/Installation/Controller/PFInstallationController.m; sourceTree = "<group>"; };
 		855CF31C03F04882948AB78DC181A1E1 /* PFPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPropertyInfo.m; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo.m; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		85EA73743404FE8F2E3576E333E8810E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+=======
+		85EA73743404FE8F2E3576E333E8810E /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		864A120B7A4952B9A1169585C77693B3 /* AlamofireImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireImage-prefix.pch"; sourceTree = "<group>"; };
 		8662F5530799A9BEBB7662902AE96ED7 /* PFPushState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushState.m; path = Parse/Parse/Internal/Push/State/PFPushState.m; sourceTree = "<group>"; };
 		867B9BC4375FC5E1C40BE2BD4C3BCED9 /* PFRESTUserCommand.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRESTUserCommand.m; path = Parse/Parse/Internal/Commands/PFRESTUserCommand.m; sourceTree = "<group>"; };
@@ -840,7 +848,11 @@
 		9C1183A34F33AE022F1AEC4EF2A63F2C /* PFCommandResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandResult.h; path = Parse/Parse/Internal/PFCommandResult.h; sourceTree = "<group>"; };
 		9C741A06688E2698DBF682D0865E4816 /* PFURLSessionCommandRunner_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFURLSessionCommandRunner_Private.h; path = Parse/Parse/Internal/Commands/CommandRunner/URLSession/PFURLSessionCommandRunner_Private.h; sourceTree = "<group>"; };
 		9CD431A72BE1F6A61D4D4BEB23303956 /* PFPushController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPushController.m; path = Parse/Parse/Internal/Push/Controller/PFPushController.m; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+=======
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+>>>>>>> Stashed changes
 		9ED95A85313EC3FE3E98E926C16950CB /* PFFileDataStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFFileDataStream.m; path = Parse/Parse/Internal/File/FileDataStream/PFFileDataStream.m; sourceTree = "<group>"; };
 		9FC2CFDBC72F088D197B46A868498632 /* PFBase64Encoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFBase64Encoder.h; path = Parse/Parse/Internal/PFBase64Encoder.h; sourceTree = "<group>"; };
 		A03245C9A579DF1E096964D2722E70D1 /* PFCommandURLRequestConstructor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFCommandURLRequestConstructor.m; path = Parse/Parse/Internal/Commands/CommandRunner/URLRequestConstructor/PFCommandURLRequestConstructor.m; sourceTree = "<group>"; };
@@ -1515,7 +1527,10 @@
 				8F43EE5227432298BA2555A0233CCA16 /* Support Files */,
 				6B208386FB335D4230A527EE806E2397 /* Tasks */,
 			);
+<<<<<<< Updated upstream
 			name = Bolts;
+=======
+>>>>>>> Stashed changes
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -1629,7 +1644,10 @@
 				A59BE915D687EAD324F9AFBE83B72FF0 /* Validation.swift */,
 				83DD7AF09F4BAFA8CFB05EAE8CE8999D /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = Alamofire;
+=======
+>>>>>>> Stashed changes
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1715,7 +1733,10 @@
 				9798D4590AA9E554BD65C6454D683C18 /* Resources */,
 				0FE549303162A81C2D00185B61ED779A /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = DropDown;
+=======
+>>>>>>> Stashed changes
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -1753,7 +1774,10 @@
 				03D39DCC1C0E97A5BCBBF2DC19888C13 /* Core */,
 				95C115397D0F9DBB95033F1F5C67A5E1 /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = Parse;
+=======
+>>>>>>> Stashed changes
 			path = Parse;
 			sourceTree = "<group>";
 		};
@@ -1782,7 +1806,10 @@
 				A59A215984FAB46B81BA8D00C32F4618 /* UIImageView+AlamofireImage.swift */,
 				2CE92D59C1581501F9DB894B033E1151 /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = AlamofireImage;
+=======
+>>>>>>> Stashed changes
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
@@ -1795,7 +1822,11 @@
 				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
 				0652F2476C7C87C6C0F6CB68072EA25F /* Parse */,
 				ED7ADA84A7005589821D254428CD2D26 /* Parse-Parse */,
+<<<<<<< Updated upstream
 				4AECC0001CF4560C54E942E53965CD9D /* Pods-K & J News */,
+=======
+				4AECC0001CF4560C54E942E53965CD9D /* Pods_K___J_News.framework */,
+>>>>>>> Stashed changes
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2102,8 +2133,8 @@
 				454DA0F14E488AFF3615824ADDC5EA5C /* PBXTargetDependency */,
 			);
 			name = "Pods-K & J News";
-			productName = Pods_K___J_News;
-			productReference = 4AECC0001CF4560C54E942E53965CD9D /* Pods-K & J News */;
+			productName = "Pods_K___J_News";
+			productReference = 4AECC0001CF4560C54E942E53965CD9D /* Pods_K___J_News.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		42465A188431886AB035275F049824D3 /* Bolts */ = {
@@ -2599,6 +2630,7 @@
 			name = Parse;
 			target = 7F3FE5658AEC4AF2B296EDA73A218182 /* Parse */;
 			targetProxy = D1C93D0A4BD7F4C7ACFEC7A2BA14EAE0 /* PBXContainerItemProxy */;
+<<<<<<< Updated upstream
 		};
 		67830E8D644F2FB6D1C3F9818D8FECB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2606,6 +2638,15 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 09F89BEA04FD3592272415E579B5C6D6 /* PBXContainerItemProxy */;
 		};
+=======
+		};
+		67830E8D644F2FB6D1C3F9818D8FECB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 09F89BEA04FD3592272415E579B5C6D6 /* PBXContainerItemProxy */;
+		};
+>>>>>>> Stashed changes
 		9692B60F41F6070EA6BA0B6B2756E071 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AlamofireImage;
