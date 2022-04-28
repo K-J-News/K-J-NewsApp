@@ -76,7 +76,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         countryTextField.text = user["country"] as! String
         countryTextField.placeholder = "Enter a new country (use two character code)"
         
-        countryTextField.text = user.password as! String
         passwordTextField.placeholder = "Enter a new password"
         
         langTextField.text = user["lang"] as! String

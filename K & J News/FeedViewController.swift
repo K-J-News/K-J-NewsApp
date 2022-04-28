@@ -24,7 +24,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     private var previousCategory = ""
     
-
+    private var noResultsLabel: UILabel!
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -42,30 +42,16 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
-      
-        
-        
-//        let user = PFUser.current()!
-//        let userCountry = user["country"]! as! String
-//        let userLang = user["lang"]! as! String
-//        APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
-//            [weak self] result in
-//                    switch result {
-//                    case .success(let articles):
-//                        self?.articles = articles
-//                        self?.viewModels = articles.compactMap({
-//                            NewsTableViewCellViewModel(title: $0.title,
-//                                                       subtitle: $0.description ?? "No description",
-//                                                       imageURL: URL(string: $0.urlToImage ?? ""))
-//                        })
-//                        DispatchQueue.main.async {
-//                            self?.tableView.reloadData()
-//                        }
-//                    case .failure(let error):
-//                        print(error)
-//                    }
-//                }
-
+        noResultsLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        noResultsLabel.center = CGPoint(x: 210, y: 285)
+        noResultsLabel.textColor = UIColor.gray
+        noResultsLabel.textAlignment = .center
+        noResultsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        noResultsLabel.numberOfLines = 0
+        noResultsLabel.text = "No results. Please try again later or change your language and country settings."
+        noResultsLabel.isHidden = true
+        self.view.addSubview(noResultsLabel)
+        //noResultsLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -78,7 +64,9 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
             print(action.title)
             self.feedNavBar.title = action.title
             self.previousCategory = action.title
-            APICaller.shared.getUserCatagoryStories(lang: userLang, country: userCountry, category: action.title) {
+            
+            //feed view updates when user selects a new category
+            APICaller.shared.getUserCategoryStories(lang: userLang, country: userCountry, category: action.title) {
                 [weak self] result in
                         switch result {
                         case .success(let articles):
@@ -89,7 +77,14 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                                                            imageURL: URL(string: $0.urlToImage ?? ""))
                             })
                             DispatchQueue.main.async {
+                                if(articles.count == 0){
+                                    self?.noResultsLabel.isHidden = false
+                                } else{
+                                    self?.noResultsLabel.isHidden = true
+                                }
+
                                 self?.tableView.reloadData()
+                                
                             }
                         case .failure(let error):
                             print(error)
@@ -109,11 +104,10 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
         feedNavBar.rightBarButtonItem = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: nil)
         feedNavBar.rightBarButtonItem?.menu = barButtonMenu
-//
         if (previousCategory == ""){
             
         
-        
+        //default feed when app first opens
         APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
             [weak self] result in
                     switch result {
@@ -125,6 +119,11 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                                                        imageURL: URL(string: $0.urlToImage ?? ""))
                         })
                         DispatchQueue.main.async {
+                            if(articles.count == 0){
+                                self?.noResultsLabel.isHidden = false
+                            } else{
+                                self?.noResultsLabel.isHidden = true
+                            }
                             self?.tableView.reloadData()
                         }
                     case .failure(let error):
@@ -132,7 +131,8 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                     }
                 }
         } else{
-            APICaller.shared.getUserCatagoryStories(lang: userLang, country: userCountry, category: previousCategory) {
+            //feed gets the previous selected category
+            APICaller.shared.getUserCategoryStories(lang: userLang, country: userCountry, category: previousCategory) {
                 [weak self] result in
                         switch result {
                         case .success(let articles):
@@ -143,6 +143,11 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                                                            imageURL: URL(string: $0.urlToImage ?? ""))
                             })
                             DispatchQueue.main.async {
+                                if(articles.count == 0){
+                                    self?.noResultsLabel.isHidden = false
+                                } else{
+                                    self?.noResultsLabel.isHidden = true
+                                }
                                 self?.tableView.reloadData()
                             }
                         case .failure(let error):
