@@ -75,6 +75,39 @@ final class APICaller{
         task.resume()
     }
     
+    public func getUserCatagoryStories(lang: String, country: String, category: String, completion: @escaping (Result<[Article], Error>) -> Void){
+        let urlString = ("https://newsapi.org/v2/top-headlines?sortedby=popularity&apiKey=cf4487e5702f48a1bbcd43901c508fcb&language=\(lang)&country=\(country)&category=\(category)")
+        
+        print(urlString)
+        
+        guard let url = URL(string: urlString) else{
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) {data, _, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            else if let data = data {
+                do{
+                    let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                    
+                    print("Articles: \(result.articles.count)")
+                    completion(.success(result.articles))
+                }
+                catch{
+                    completion(.failure(error))
+                }
+            }
+        }
+        
+        task.resume()
+        
+        
+        
+        
+    }
+    
     public func search(with query: String, completion: @escaping (Result<[Article], Error>) -> Void){
         guard !query.trimmingCharacters(in: .whitespaces).isEmpty else{
             return

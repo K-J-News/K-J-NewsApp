@@ -22,6 +22,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var feedNavBar: UINavigationItem!
     
+    private var previousCategory = ""
     
 
     
@@ -41,26 +42,8 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
-        let menuHandler: UIActionHandler = { action in
-            print(action.title)
-        }
-
-        let barButtonMenu = UIMenu(title: "", children: [
-            UIAction(title: NSLocalizedString("Business", comment: ""),  handler: menuHandler),
-            UIAction(title: NSLocalizedString("Entertainment", comment: ""),  handler: menuHandler),
-            UIAction(title: NSLocalizedString("General", comment: ""), handler: menuHandler),
-            UIAction(title: NSLocalizedString("Health", comment: ""), handler: menuHandler),
-            UIAction(title: NSLocalizedString("Science", comment: ""), handler: menuHandler),
-            UIAction(title: NSLocalizedString("Sports", comment: ""), handler: menuHandler),
-            UIAction(title: NSLocalizedString("Technology", comment: ""), handler: menuHandler)
-        ])
-
-        feedNavBar.rightBarButtonItem = UIBarButtonItem(title: "Catagories", style: .plain, target: self, action: nil)
-        feedNavBar.rightBarButtonItem?.menu = barButtonMenu
-
-  
+      
         
- 
         
 //        let user = PFUser.current()!
 //        let userCountry = user["country"]! as! String
@@ -90,6 +73,46 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let user = PFUser.current()!
         let userCountry = user["country"]! as! String
         let userLang = user["lang"]! as! String
+        
+        let menuHandler: UIActionHandler = { action in
+            print(action.title)
+            self.previousCategory = action.title
+            APICaller.shared.getUserCatagoryStories(lang: userLang, country: userCountry, category: action.title) {
+                [weak self] result in
+                        switch result {
+                        case .success(let articles):
+                            self?.articles = articles
+                            self?.viewModels = articles.compactMap({
+                                NewsTableViewCellViewModel(title: $0.title,
+                                                           subtitle: $0.description ?? "No description",
+                                                           imageURL: URL(string: $0.urlToImage ?? ""))
+                            })
+                            DispatchQueue.main.async {
+                                self?.tableView.reloadData()
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+        }
+
+        let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString("Business", comment: ""),  handler: menuHandler),
+            UIAction(title: NSLocalizedString("Entertainment", comment: ""),  handler: menuHandler),
+            UIAction(title: NSLocalizedString("General", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Health", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Science", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Sports", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Technology", comment: ""), handler: menuHandler)
+        ])
+
+        feedNavBar.rightBarButtonItem = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: nil)
+        feedNavBar.rightBarButtonItem?.menu = barButtonMenu
+//
+        if (previousCategory == ""){
+            
+        
+        
         APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
             [weak self] result in
                     switch result {
@@ -107,6 +130,27 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                         print(error)
                     }
                 }
+        } else{
+            APICaller.shared.getUserCatagoryStories(lang: userLang, country: userCountry, category: previousCategory) {
+                [weak self] result in
+                        switch result {
+                        case .success(let articles):
+                            self?.articles = articles
+                            self?.viewModels = articles.compactMap({
+                                NewsTableViewCellViewModel(title: $0.title,
+                                                           subtitle: $0.description ?? "No description",
+                                                           imageURL: URL(string: $0.urlToImage ?? ""))
+                            })
+                            DispatchQueue.main.async {
+                                self?.tableView.reloadData()
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+        }
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
