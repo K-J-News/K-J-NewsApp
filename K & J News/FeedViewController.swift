@@ -8,6 +8,8 @@
 import UIKit
 import SafariServices
 import Parse
+import Foundation
+import DropDown
 
 //TableView
 //CustomCell
@@ -17,7 +19,11 @@ import Parse
 
 class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+
+    @IBOutlet weak var feedNavBar: UINavigationItem!
     
+    
+
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -34,6 +40,27 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let menuHandler: UIActionHandler = { action in
+            print(action.title)
+        }
+
+        let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString("Business", comment: ""),  handler: menuHandler),
+            UIAction(title: NSLocalizedString("Entertainment", comment: ""),  handler: menuHandler),
+            UIAction(title: NSLocalizedString("General", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Health", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Science", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Sports", comment: ""), handler: menuHandler),
+            UIAction(title: NSLocalizedString("Technology", comment: ""), handler: menuHandler)
+        ])
+
+        feedNavBar.rightBarButtonItem = UIBarButtonItem(title: "Catagories", style: .plain, target: self, action: nil)
+        feedNavBar.rightBarButtonItem?.menu = barButtonMenu
+
+  
+        
+ 
         
 //        let user = PFUser.current()!
 //        let userCountry = user["country"]! as! String
@@ -128,6 +155,9 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 150  
     }
+    
+   
+    
     
     
 }
