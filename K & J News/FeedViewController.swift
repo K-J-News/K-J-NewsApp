@@ -48,7 +48,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         noResultsLabel.textAlignment = .center
         noResultsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         noResultsLabel.numberOfLines = 0
-        noResultsLabel.text = "No results. Please try again later or change your language and country settings."
+        noResultsLabel.text = "No results. Please try again later."
         noResultsLabel.isHidden = true
         self.view.addSubview(noResultsLabel)
         //noResultsLabel.isHidden = true

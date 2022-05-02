@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }()
     
     private let searchVC = UISearchController(searchResultsController: nil)
-    
+    private var noResultsLabel: UILabel!
     private var articles = [Article]()
     private var viewModels = [NewsTableViewCellViewModel]()
 
@@ -32,6 +32,16 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
+        noResultsLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        noResultsLabel.center = CGPoint(x: 210, y: 285)
+        noResultsLabel.textColor = UIColor.gray
+        noResultsLabel.textAlignment = .center
+        noResultsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        noResultsLabel.numberOfLines = 0
+        noResultsLabel.text = "No results. Please try again later."
+        noResultsLabel.isHidden = true
+        self.view.addSubview(noResultsLabel)
+        
         createSearchBar()
         
         APICaller.shared.getUserTopStories(lang: userLang, country: userCountry){ [weak self] result in
@@ -44,6 +54,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                imageURL: URL(string: $0.urlToImage ?? ""))
                 })
                 DispatchQueue.main.async {
+                    if(articles.count == 0){
+                        self?.noResultsLabel.isHidden = false
+                    } else{
+                        self?.noResultsLabel.isHidden = true
+                    }
                     self?.tableView.reloadData()
                 }
             case .failure(let error):
@@ -126,6 +141,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                    imageURL: URL(string: $0.urlToImage ?? ""))
                     })
                     DispatchQueue.main.async {
+                        if(articles.count == 0){
+                            self?.noResultsLabel.isHidden = false
+                        } else{
+                            self?.noResultsLabel.isHidden = true
+                        }
                         self?.tableView.reloadData()
                         self?.searchVC.dismiss(animated: true, completion: nil)
                     }
