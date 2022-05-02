@@ -62,11 +62,15 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //zh = chinese
         
         
-        countryPickerDisplayData = ["United Arab Emirates", "Argentina", "Austria", "Australia", "Belgium", "Bulgaria", "Brazil",  "Canada",  "Switzerland", "China", "Colombia", "Cuba", "Czech Republic", "Germany", "Egypt", "France", "United Kingdom", "Greece", "Hong Kong",  "Hungary", "Indonesia", "Ireland", "Israel", "India", "Italy", "Japan", "South Korea", "Lithuania", "Latvia", "Morocco", "Mexico", "Malaysia", "Nigeria", "Netherlands", "Norway", "New Zealand", "Philippines", "Portugal", "Romania", "Serbia", "Russia", "Saudi Arabia",  "Sweden", "Singapore", "Slovenia", "Slovakia", "Thailand", "Turkey", "Taiwan", "Ukraine", "United States", "Venezuela", "South Africa"]
+        countryPickerDisplayData = ["United Arab Emirates", "Argentina", "Austria", "Australia", "Belgium", "Bulgaria", "Brazil",  "Canada",  "Switzerland", "China", "Colombia", "Cuba", "Czech Republic", "Germany", "Egypt", "France", "United Kingdom", "Greece", "Hong Kong",  "Hungary", "Indonesia", "Ireland", "Israel", "India", "Italy", "Japan", "South Korea", "Lithuania", "Latvia", "Morocco", "Mexico", "Malaysia", "Nigeria", "Netherlands", "Norway", "New Zealand", "Philippines", "Poland", "Portugal", "Romania", "Serbia", "Russia", "Saudi Arabia",  "Sweden", "Singapore", "Slovenia", "Slovakia", "Thailand", "Turkey", "Taiwan", "Ukraine", "United States", "Venezuela", "South Africa"]
         countryPickerValueData = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it",  "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve",  "za",]
         
         langPickerDisplayData = [ "Arabic", "German", "English", "Spanish", "French", "Hebrew", "Italian", "Dutch", "Norwegien", "Portuguese", "Russian", "Swedish","Urdu" ,"Chinese"]
         langPickerValueData = ["ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "se","ud" ,"zh"]
+        
+        print("debug")
+        print(countryPickerDisplayData.count)
+        print(countryPickerValueData.count)
         
         
         let user = PFUser.current()!
