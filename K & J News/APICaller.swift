@@ -75,7 +75,7 @@ final class APICaller{
         task.resume()
     }
     
-    public func getUserCatagoryStories(lang: String, country: String, category: String, completion: @escaping (Result<[Article], Error>) -> Void){
+    public func getUserCategoryStories(lang: String, country: String, category: String, completion: @escaping (Result<[Article], Error>) -> Void){
         let urlString = ("https://newsapi.org/v2/top-headlines?sortedby=popularity&apiKey=cf4487e5702f48a1bbcd43901c508fcb&language=\(lang)&country=\(country)&category=\(category)")
         
         print(urlString)
