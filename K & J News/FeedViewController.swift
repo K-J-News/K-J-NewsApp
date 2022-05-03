@@ -51,7 +51,6 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         noResultsLabel.text = "No results. Please try again later."
         noResultsLabel.isHidden = true
         self.view.addSubview(noResultsLabel)
-        //noResultsLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
     
