@@ -98,5 +98,5 @@ CST 495 Final Project -
 
 ###**Gif of Update**
 
-![JekgXUMNcl](https://user-images.githubusercontent.com/53494842/164131283-bf31abb9-517a-4db7-938b-f6637f2826f1.gif)
+![JekgXUMNcl](http://g.recordit.co/QeoGa8SkuC.gif)
 
