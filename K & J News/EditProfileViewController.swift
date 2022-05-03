@@ -35,6 +35,18 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.systemBlue
+        toolBar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(self.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.donePicker))
+
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
         
         countryPickerView.delegate = self
         countryPickerView.dataSource = self
@@ -45,54 +57,58 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         countryTextField.delegate = self
         langTextField.delegate = self
         
-        // langauges
-        //ar = arabic
-        //de = german
-        //en = english
-        //es = espanol
-        //fr = french
-        //he = hebrew
-        //it = italian
-        //nl = dutch
-        //no = norwegien
-        //pt = portuguse
-        //ru = russian
-        //se = swedish
-        //ud = urdu
-        //zh = chinese
-        
         
         countryPickerDisplayData = ["United Arab Emirates", "Argentina", "Austria", "Australia", "Belgium", "Bulgaria", "Brazil",  "Canada",  "Switzerland", "China", "Colombia", "Cuba", "Czech Republic", "Germany", "Egypt", "France", "United Kingdom", "Greece", "Hong Kong",  "Hungary", "Indonesia", "Ireland", "Israel", "India", "Italy", "Japan", "South Korea", "Lithuania", "Latvia", "Morocco", "Mexico", "Malaysia", "Nigeria", "Netherlands", "Norway", "New Zealand", "Philippines", "Poland", "Portugal", "Romania", "Serbia", "Russia", "Saudi Arabia",  "Sweden", "Singapore", "Slovenia", "Slovakia", "Thailand", "Turkey", "Taiwan", "Ukraine", "United States", "Venezuela", "South Africa"]
         countryPickerValueData = ["ae", "ar", "at", "au", "be", "bg", "br", "ca", "ch", "cn", "co", "cu", "cz", "de", "eg", "fr", "gb", "gr", "hk", "hu", "id", "ie", "il", "in", "it",  "jp", "kr", "lt", "lv", "ma", "mx", "my", "ng", "nl", "no", "nz", "ph", "pl", "pt", "ro", "rs", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "ve",  "za",]
         
         langPickerDisplayData = [ "Arabic", "German", "English", "Spanish", "French", "Hebrew", "Italian", "Dutch", "Norwegien", "Portuguese", "Russian", "Swedish","Urdu" ,"Chinese"]
         langPickerValueData = ["ar", "de", "en", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "se","ud" ,"zh"]
-        
-        print("debug")
-        print(countryPickerDisplayData.count)
-        print(countryPickerValueData.count)
+
+
         
         
         let user = PFUser.current()!
+        
+        let user_lang = user["lang"] as! String
+        let user_country = user["country"] as! String
+        
         usernameTextField.text = user.username
         usernameTextField.placeholder = "Enter a new username"
 
-        countryTextField.text = user["country"] as! String
+        countryTextField.text = user_country
         countryTextField.placeholder = "Enter a new country (use two character code)"
         
         passwordTextField.placeholder = "Enter a new password"
         
-        langTextField.text = user["lang"] as! String
+        langTextField.text = user_lang
         countryTextField.placeholder = "Enter a new langauge (use two character code)"
         
         countryTextField.inputView = countryPickerView
+        countryTextField.inputAccessoryView = toolBar
+        
         langTextField.inputView = langPickerView
+        langTextField.inputAccessoryView = toolBar
         
         countryPickerView.isHidden = true
         langPickerView.isHidden = true
+        messageLabel.isHidden = true
         
+        
+        if let indexPosition = countryPickerValueData.firstIndex(of: user_country){
+            countryPickerView.selectRow(indexPosition, inComponent: 0, animated: true)
+        }
+        if let indexPosition = langPickerValueData.firstIndex(of: user_lang){
+            langPickerView.selectRow(indexPosition, inComponent: 0, animated: true)
+        }
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func donePicker(_ pickerView: UIPickerView,_ textField: UITextField) {
+        countryTextField.resignFirstResponder()
+        countryPickerView.isHidden = true
+        langTextField.resignFirstResponder()
+        langPickerView.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -118,10 +134,10 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == countryPickerView{
                 countryTextField.text = countryPickerValueData[row]
-                countryPickerView.isHidden = true
+                //countryPickerView.isHidden = true
             } else {
                 langTextField.text = langPickerValueData[row]
-                langPickerView.isHidden = true
+                //langPickerView.isHidden = true
             }
     }
     
