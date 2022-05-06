@@ -13,6 +13,8 @@ class NewsTableViewCellViewModel{
     let imageURL: URL?
     var imageData: Data? = nil
     
+    
+    
     init(
     title: String,
     subtitle: String,
@@ -31,14 +33,16 @@ class NewsTableViewCell: UITableViewCell {
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont(name:"Avenir-Heavy", size:17)
+        
         return label
+        
     }()
     
     private let subTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 17, weight: .light)
+        label.font = UIFont(name:"Avenir-Medium", size:15)
         return label
     }()
     
@@ -57,6 +61,7 @@ class NewsTableViewCell: UITableViewCell {
         contentView.addSubview(newsTitleLabel)
         contentView.addSubview(subTitleLabel)
         contentView.addSubview(newsImageView)
+        
     }
     
     required init?(coder: NSCoder){
@@ -109,5 +114,7 @@ class NewsTableViewCell: UITableViewCell {
             
         }
     }
+    
+    
 
 }

@@ -19,6 +19,7 @@ import Foundation
 
 class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
+    
 
     @IBOutlet weak var feedNavBar: UINavigationItem!
     
@@ -37,6 +38,8 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.view.backgroundColor = UIColorFromHex(rgbValue: 0x323232,alpha: 1)
         
         view.addSubview(tableView)
         tableView.delegate = self
@@ -188,6 +191,12 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
         cell.configure(with: viewModels[indexPath.row])
         return cell
+        
+        if (indexPath.row % 2 == 0){
+            cell.backgroundColor = UIColor.blue;
+        } else {
+            cell.backgroundColor = UIColor.white;
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
@@ -205,6 +214,16 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 150  
     }
+    
+//    func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
+//        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+//        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+//        let blue = CGFloat(rgbValue & 0xFF)/256.0
+//
+//        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
+//    }
+
+       
     
    
     
