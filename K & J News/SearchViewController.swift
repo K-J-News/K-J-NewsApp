@@ -21,29 +21,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var noResultsLabel: UILabel!
     private var articles = [Article]()
     private var viewModels = [NewsTableViewCellViewModel]()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         let user = PFUser.current()!
         let userCountry = user["country"]! as! String
         let userLang = user["lang"]! as! String
-        
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        noResultsLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
-        noResultsLabel.center = CGPoint(x: 210, y: 285)
-        noResultsLabel.textColor = UIColor.gray
-        noResultsLabel.textAlignment = .center
-        noResultsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        noResultsLabel.numberOfLines = 0
-        noResultsLabel.text = "No results. Please try again later."
-        noResultsLabel.isHidden = true
-        self.view.addSubview(noResultsLabel)
-        
-        createSearchBar()
-        
         APICaller.shared.getUserTopStories(lang: userLang, country: userCountry){ [weak self] result in
             switch result {
             case .success(let articles):
@@ -65,6 +48,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        noResultsLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        noResultsLabel.center = CGPoint(x: 210, y: 285)
+        noResultsLabel.textColor = UIColor.gray
+        noResultsLabel.textAlignment = .center
+        noResultsLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        noResultsLabel.numberOfLines = 0
+        noResultsLabel.text = "No results. Please try again later."
+        noResultsLabel.isHidden = true
+        self.view.addSubview(noResultsLabel)
+        
+        createSearchBar()
 
         // Do any additional setup after loading the view.
     }

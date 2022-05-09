@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("view appear")
         let user = PFUser.current()!
         usernameOutlet.text = user.username
         countryOutlet.text = user["country"]! as! String
