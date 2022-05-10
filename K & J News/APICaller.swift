@@ -63,7 +63,7 @@ final class APICaller{
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
                     
-                    print("Articles: \(result.articles.count)")
+                    
                     completion(.success(result.articles))
                 }
                 catch{
@@ -92,7 +92,7 @@ final class APICaller{
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
                     
-                    print("Articles: \(result.articles.count)")
+                    
                     completion(.success(result.articles))
                 }
                 catch{
@@ -126,7 +126,7 @@ final class APICaller{
                 do{
                     let result = try JSONDecoder().decode(APIResponse.self, from: data)
                     
-                    print("Articles: \(result.articles.count)")
+                    
                     completion(.success(result.articles))
                 }
                 catch{
@@ -165,7 +165,7 @@ public func getUserSearch(lang: String, country: String, query: String, completi
             do{
                 let result = try JSONDecoder().decode(APIResponse.self, from: data)
                 
-                print("Articles: \(result.articles.count)")
+                
                 completion(.success(result.articles))
             }
             catch{

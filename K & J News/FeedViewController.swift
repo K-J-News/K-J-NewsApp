@@ -63,38 +63,65 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         let userLang = user["lang"]! as! String
         
         let menuHandler: UIActionHandler = { action in
-            print(action.title)
+            //print(action.title)
+            
             self.feedNavBar.title = action.title
             self.previousCategory = action.title
             
-            //feed view updates when user selects a new category
-            APICaller.shared.getUserCategoryStories(lang: userLang, country: userCountry, category: action.title) {
-                [weak self] result in
-                        switch result {
-                        case .success(let articles):
-                            self?.articles = articles
-                            self?.viewModels = articles.compactMap({
-                                NewsTableViewCellViewModel(title: $0.title,
-                                                           subtitle: $0.description ?? "No description",
-                                                           imageURL: URL(string: $0.urlToImage ?? ""))
-                            })
-                            DispatchQueue.main.async {
-                                if(articles.count == 0){
-                                    self?.noResultsLabel.isHidden = false
-                                } else{
-                                    self?.noResultsLabel.isHidden = true
+            if (action.title == "All"){
+                APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
+                    [weak self] result in
+                            switch result {
+                            case .success(let articles):
+                                self?.articles = articles
+                                self?.viewModels = articles.compactMap({
+                                    NewsTableViewCellViewModel(title: $0.title,
+                                                               subtitle: $0.description ?? "No description",
+                                                               imageURL: URL(string: $0.urlToImage ?? ""))
+                                })
+                                DispatchQueue.main.async {
+                                    if(articles.count == 0){
+                                        self?.noResultsLabel.isHidden = false
+                                    } else{
+                                        self?.noResultsLabel.isHidden = true
+                                    }
+                                    self?.tableView.reloadData()
                                 }
-
-                                self?.tableView.reloadData()
-                                
+                            case .failure(let error):
+                                print(error)
                             }
-                        case .failure(let error):
-                            print(error)
                         }
-                    }
+            } else{
+                //feed view updates when user selects a new category
+                APICaller.shared.getUserCategoryStories(lang: userLang, country: userCountry, category: action.title) {
+                    [weak self] result in
+                            switch result {
+                            case .success(let articles):
+                                self?.articles = articles
+                                self?.viewModels = articles.compactMap({
+                                    NewsTableViewCellViewModel(title: $0.title,
+                                                               subtitle: $0.description ?? "No description",
+                                                               imageURL: URL(string: $0.urlToImage ?? ""))
+                                })
+                                DispatchQueue.main.async {
+                                    if(articles.count == 0){
+                                        self?.noResultsLabel.isHidden = false
+                                    } else{
+                                        self?.noResultsLabel.isHidden = true
+                                    }
+
+                                    self?.tableView.reloadData()
+                                    
+                                }
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+            }
         }
 
         let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString("All", comment: ""),  handler: menuHandler),
             UIAction(title: NSLocalizedString("Business", comment: ""),  handler: menuHandler),
             UIAction(title: NSLocalizedString("Entertainment", comment: ""),  handler: menuHandler),
             UIAction(title: NSLocalizedString("General", comment: ""), handler: menuHandler),
@@ -107,8 +134,6 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         feedNavBar.rightBarButtonItem = UIBarButtonItem(title: "Categories", style: .plain, target: self, action: nil)
         feedNavBar.rightBarButtonItem?.menu = barButtonMenu
         if (previousCategory == ""){
-            
-        
         //default feed when app first opens
         APICaller.shared.getUserTopStories(lang: userLang, country: userCountry) {
             [weak self] result in
